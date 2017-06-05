@@ -1,0 +1,14 @@
+.text
+main:        lw     $a0, V01
+        addi   $a0, $zero, 256
+        addi   $a1, $a0, -128
+        addi   $a2, $zero, 32767
+        addi   $a3, $a2, -32768
+        sra   $t7, $a3, 31
+        srl   $t8, $a3, 31
+        sll   $t9, $a3, 31
+        addi   $v0, $zero, 10
+        syscall
+
+.data
+V01:    .word  4096
